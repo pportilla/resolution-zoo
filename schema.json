@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas Resolution Zoo, version 1",
+  "description": "An index of searchable hypersurface germs or the geometry of one germ. Coordinates in all exponent vectors follow the declared variable order.",
+  "oneOf": [{"$ref": "#/$defs/index"}, {"$ref": "#/$defs/record"}],
+  "$defs": {
+    "version": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "strings": {"type": "array", "items": {"type": "string"}},
+    "term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient", "exponents"],
+      "properties": {
+        "coefficient": {"type": "string", "pattern": "^-?[1-9][0-9]*(/[1-9][0-9]*)?$", "description": "An exact nonzero rational in lowest terms, with positive denominator."},
+        "exponents": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^(0|[1-9][0-9]*)$"}}
+      }
+    },
+    "entry": {
+      "type": "object", "required": ["id", "dimension", "labels", "equation", "variables", "terms"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "name": {"type": "string", "description": "An optional name displayed beneath the equation."},
+        "dimension": {"type": "integer", "minimum": 1, "description": "Dimension of the hypersurface germ."},
+        "labels": {"$ref": "#/$defs/strings", "uniqueItems": true},
+        "equation": {"type": "string", "minLength": 1, "description": "An Atlas polynomial over QQ whose vanishing defines the germ."},
+        "variables": {"$ref": "#/$defs/strings", "uniqueItems": true, "minItems": 2},
+        "terms": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/term"}, "description": "Exact sparse terms in descending lexicographic order of their exponent vectors."}
+      }
+    },
+    "index": {
+      "type": "object", "additionalProperties": false, "required": ["schema_version", "entries"],
+      "properties": {
+        "schema_version": {"$ref": "#/$defs/version"},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry", "unevaluatedProperties": false}}
+      }
+    },
+    "complex": {
+      "type": "object", "required": ["status", "vertices", "cells", "convention"],
+      "properties": {
+        "status": {"type": "string"},
+        "convention": {"type": "string"},
+        "vertices": {"type": "array", "items": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string"}}}},
+        "cells": {"type": "array", "items": {
+          "type": "object", "required": ["id", "dimension", "vertices", "faces"],
+          "properties": {"id": {"type": "string"}, "dimension": {"type": "integer", "minimum": 1}, "vertices": {"$ref": "#/$defs/strings"}, "faces": {"$ref": "#/$defs/strings"}}
+        }}
+      }
+    },
+    "resolution": {
+      "type": "object", "required": ["status", "engine", "summary", "chart_count", "steps", "dual_complex", "certificate"],
+      "properties": {
+        "status": {"type": "string"},
+        "engine": {"type": "string"},
+        "summary": {"type": "string"},
+        "chart_count": {"type": "integer", "minimum": 0},
+        "steps": {"type": "array", "description": "Ordered modifications, with centre ideals, chart histories or toric ray indices as supplied by this solver.", "items": {"type": "object", "required": ["id", "type"]}},
+        "dual_complex": {"$ref": "#/$defs/complex"},
+        "certificate": {"type": "object", "required": ["atlas_verification"]},
+        "fan": {"type": "object", "required": ["rays", "cones"], "description": "Ray vectors and maximal cones given as zero-based ray indices."}
+      }
+    },
+    "localNumber": {
+      "type": "object", "additionalProperties": false, "required": ["finite", "value"],
+      "properties": {"finite": {"type": "boolean"}, "value": {"type": ["integer", "null"]}},
+      "oneOf": [
+        {"properties": {"finite": {"const": true}, "value": {"type": "integer", "minimum": 0}}},
+        {"properties": {"finite": {"const": false}, "value": {"type": "null"}}}
+      ]
+    },
+    "unavailable": {
+      "type": "object", "required": ["status", "reason"],
+      "properties": {"status": {"enum": ["partial", "unavailable", "inconclusive", "not_computed"]}, "reason": {"type": "string", "minLength": 1}},
+      "description": "An unavailable or partial result carries the solver's reason. Missing quantities must not be filled by assumptions."
+    },
+    "monodromy": {
+      "type": "object", "required": ["status", "expression", "factors", "contributions", "nearby_strata", "milnor_fiber_euler_characteristic"],
+      "properties": {
+        "status": {"const": "computed"}, "expression": {"type": "string"},
+        "factors": {"type": "array", "items": {"type": "object", "required": ["multiplicity", "exponent"]}},
+        "contributions": {"type": "array", "items": {"type": "object", "required": ["component", "multiplicity", "euler_characteristic"]}},
+        "milnor_fiber_euler_characteristic": {"type": "integer"},
+        "nearby_strata": {"type": "array", "items": {"type": "object", "required": ["model", "expression", "factors"]}}
+      }
+    },
+    "topological": {
+      "type": "object", "required": ["status", "expression", "numerator", "denominator", "numerical_data", "strata", "poles"],
+      "properties": {
+        "status": {"const": "computed"}, "expression": {"type": "string"}, "numerator": {"type": "string"}, "denominator": {"type": "string"},
+        "numerical_data": {"type": "array", "items": {"type": "object", "required": ["component", "multiplicity", "nu"]}},
+        "strata": {"type": "array", "items": {"type": "object", "required": ["components", "euler_characteristic"]}},
+        "poles": {"type": "array", "items": {"type": "object", "required": ["value", "order"]}}
+      }
+    },
+    "record": {
+      "allOf": [{"$ref": "#/$defs/entry"}],
+      "type": "object", "unevaluatedProperties": false,
+      "required": ["schema_version", "origin", "base_field", "geometric_field", "invariants", "intrinsic", "embedded", "zeta", "source"],
+      "properties": {
+        "schema_version": {"$ref": "#/$defs/version"},
+        "origin": {"type": "array", "items": {"const": 0}}, "base_field": {"type": "string"}, "geometric_field": {"type": "string"},
+        "invariants": {
+          "type": "object", "required": ["degree", "multiplicity", "milnor_number", "tjurina_number"],
+          "properties": {
+            "degree": {"type": "integer", "minimum": 1}, "multiplicity": {"type": "integer", "minimum": 1},
+            "milnor_number": {"$ref": "#/$defs/localNumber"}, "tjurina_number": {"$ref": "#/$defs/localNumber"}
+          }
+        },
+        "intrinsic": {"$ref": "#/$defs/resolution"}, "embedded": {"$ref": "#/$defs/resolution"},
+        "zeta": {
+          "type": "object", "required": ["monodromy", "topological"],
+          "properties": {
+            "monodromy": {"oneOf": [{"$ref": "#/$defs/monodromy"}, {"$ref": "#/$defs/unavailable"}]},
+            "topological": {"oneOf": [{"$ref": "#/$defs/topological"}, {"$ref": "#/$defs/unavailable"}]},
+            "pole_check": {"type": "object", "required": ["status"]}
+          }
+        },
+        "source": {"type": "object", "required": ["solver", "record_version", "search", "compute", "method"]}
+      }
+    }
+  }
+}
