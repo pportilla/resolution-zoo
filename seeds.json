@@ -859,6 +859,7 @@
     {"id": "threefold-cubic-suspension-15", "name": "Fifteenth-power suspension of a cubic cone", "equation": "x^3+x*y^2+z^3+t^15", "labels": ["Quasi-homogeneous", "Thom–Sebastiani sum", "Cubic tangent cone"]},
     {"id": "threefold-quintic-monoid-chain", "name": "Threefold with a quintic monoid tangent surface", "equation": "x^4*y+y^4*z+z^4*t+x^2*y*z^2+t^6", "labels": ["Semi-weighted homogeneous", "Quintic tangent cone"]},
     {"id": "threefold-double-triple-plane-sextic", "name": "Sextic with a double and a triple tangent plane", "equation": "x^2*y^3+x^6+y^6+z^6+t^6+x*y*z^2*t^2", "labels": ["Quintic tangent cone", "Multiple Newton faces"]},
+    {"id": "threefold-cayley-ruled-quartic", "name": "Quartic with a Cayley ruled cubic tangent cone", "equation": "x^2*z+x*y*t+y^3+x^4+2*y^4+3*z^4+5*t^4", "labels": ["Cubic tangent cone", "Ruled surface"]},
     {"id": "threefold-a2", "name": "Threefold A2 point", "equation": "x^2+y^2+z^2+t^3", "labels": ["Compound Du Val", "Brieskorn–Pham", "Quasi-homogeneous"]},
     {"id": "threefold-a3", "name": "Threefold A3 point", "equation": "x^2+y^2+z^2+t^4", "labels": ["Compound Du Val", "Brieskorn–Pham", "Quasi-homogeneous"]},
     {"id": "threefold-a4", "name": "Threefold A4 point", "equation": "x^2+y^2+z^2+t^5", "labels": ["Compound Du Val", "Brieskorn–Pham", "Quasi-homogeneous"]},
