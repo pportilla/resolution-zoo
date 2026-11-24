@@ -2420,7 +2420,8 @@
     {"id": "threefold-quintic-cusp-puiseux-deformation", "name": "Quintic tangent with a cusp and a two-stage Puiseux deformation", "equation": "x^5+y^5+z^5+t^2*x*y*z+t^2*x^4-2*t^7*x^2+t^12+t^13", "labels": ["Cusp tangent singularity", "Multiple Newton faces"]},
     {"id": "threefold-degree-eleven-a3-tangent", "name": "Degree-eleven tangent with an A3 point and a degree-thirteen term", "equation": "x*y*t^9+z^4*t^7+x^11+y^11+z^11+t^13", "labels": ["A3 tangent singularity", "Yomdin singularity"]},
     {"id": "threefold-cuspidal-quartic-monoid", "name": "Superisolated threefold over a quartic monoid with a cuspidal cubic tangent", "equation": "t*(y^2*z-x^3)+z^4+y^5+t^5", "labels": ["Superisolated", "Quartic tangent cone", "Higher-order perturbation"]},
-    {"id": "threefold-quartic-w10-e6", "name": "Superisolated threefold over a quartic with W(1,0) and E6 double points", "equation": "x^2*t^2+x*t*y^2+y^4+x*z^3+x^5+t^5", "labels": ["Superisolated", "Quartic tangent cone", "Higher-order perturbation"]}
+    {"id": "threefold-quartic-w10-e6", "name": "Superisolated threefold over a quartic with W(1,0) and E6 double points", "equation": "x^2*t^2+x*t*y^2+y^4+x*z^3+x^5+t^5", "labels": ["Superisolated", "Quartic tangent cone", "Higher-order perturbation"]},
+    {"id": "threefold-quartic-concurrent-cubic-yomdin", "name": "Threefold with a quartic monoid over three concurrent lines and a degree-seven term", "equation": "z^4+t*x*y*(x-y)+x^7+y^7+t^7", "labels": ["Yomdin singularity", "Quartic tangent cone", "Higher-order perturbation"]}
   ]
 }, {
   "dimension": 4,
