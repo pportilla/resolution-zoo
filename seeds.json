@@ -2422,7 +2422,8 @@
     {"id": "threefold-cuspidal-quartic-monoid", "name": "Superisolated threefold over a quartic monoid with a cuspidal cubic tangent", "equation": "t*(y^2*z-x^3)+z^4+y^5+t^5", "labels": ["Superisolated", "Quartic tangent cone", "Higher-order perturbation"]},
     {"id": "threefold-quartic-w10-e6", "name": "Superisolated threefold over a quartic with W(1,0) and E6 double points", "equation": "x^2*t^2+x*t*y^2+y^4+x*z^3+x^5+t^5", "labels": ["Superisolated", "Quartic tangent cone", "Higher-order perturbation"]},
     {"id": "threefold-quartic-concurrent-cubic-yomdin", "name": "Threefold with a quartic monoid over three concurrent lines and a degree-seven term", "equation": "z^4+t*x*y*(x-y)+x^7+y^7+t^7", "labels": ["Yomdin singularity", "Quartic tangent cone", "Higher-order perturbation"]},
-    {"id": "threefold-octic-ordinary-sextuple-tangent", "name": "Threefold with an octic tangent surface and an ordinary sextuple point", "equation": "t^2*(x^6+y^6+z^6)+5*t*x^3*y^2*z^2+x^8+y^8+z^8+t^9", "labels": ["Superisolated singularity", "Octic tangent cone", "Ordinary multiple point"], "search": "exhaustive"}
+    {"id": "threefold-octic-ordinary-sextuple-tangent", "name": "Threefold with an octic tangent surface and an ordinary sextuple point", "equation": "t^2*(x^6+y^6+z^6)+5*t*x^3*y^2*z^2+x^8+y^8+z^8+t^9", "labels": ["Superisolated singularity", "Octic tangent cone", "Ordinary multiple point"], "search": "exhaustive"},
+    {"id": "threefold-quintic-semi-brieskorn-356", "name": "Threefold with a quintic tangent surface and a semiweighted (3,5,6) point", "equation": "x^3*t^2+3*x^2*z^2*t+3*x*z^4+x^5+y^5+x*y^2*z^2+t^6", "labels": ["Superisolated singularity", "Quintic tangent cone", "Semi-weighted homogeneous angular point"], "search": "exhaustive"}
   ]
 }, {
   "dimension": 4,
