@@ -2428,7 +2428,8 @@
   "entries": [
     {"id": "fourfold-node", "name": "Fourfold ordinary double point", "equation": "x^2+y^2+z^2+t^2+u^2", "labels": ["Ordinary double point", "Homogeneous", "Quasi-homogeneous", "Brieskorn–Pham"]},
     {"id": "fourfold-cubic", "name": "Cubic threefold cone", "equation": "x^3+y^3+z^3+t^3+u^3", "labels": ["Cone", "Homogeneous", "Quasi-homogeneous", "Brieskorn–Pham"]},
-    {"id": "fourfold-bp-2-3-4-4-2", "name": "Brieskorn–Pham (2,3,4,4,2)", "equation": "x^2+y^3+z^4+t^4+u^2", "labels": ["Brieskorn–Pham", "Quasi-homogeneous"]}
+    {"id": "fourfold-bp-2-3-4-4-2", "name": "Brieskorn–Pham (2,3,4,4,2)", "equation": "x^2+y^3+z^4+t^4+u^2", "labels": ["Brieskorn–Pham", "Quasi-homogeneous"]},
+    {"id": "fourfold-quintic-cusp-fermat-tangent", "name": "Superisolated fourfold with a quintic tangent and a suspended cusp", "equation": "x^2*u^3+y^3*u^2+x^5+y^5+z^5+t^5+u^6", "labels": ["Superisolated", "Quintic tangent cone", "Higher-order perturbation"]}
   ]
 }, {
   "dimension": 5,
