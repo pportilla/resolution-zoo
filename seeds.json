@@ -2418,7 +2418,8 @@
     {"id": "threefold-sextic-triple-nodal-cubic-transform", "name": "Sextic tangent with an ordinary triple point and a nodal cubic on the strict transform", "equation": "t^3*(x^3+y^3+z^3)+x^6+y^6+z^6+t^5*(-x^2+y*z)+t^10", "labels": ["Ordinary triple point on tangent cone", "Multiple Newton faces"]},
     {"id": "threefold-quintic-cusp-split-puiseux-deformation", "name": "Quintic tangent with a cusp and separated roots on a Newton face", "equation": "x^5+y^5+z^5+t^2*x*y*z+t^2*x^4-3*t^7*x^2+t^12+t^13", "labels": ["Cusp tangent singularity", "Multiple Newton faces"]},
     {"id": "threefold-quintic-cusp-puiseux-deformation", "name": "Quintic tangent with a cusp and a two-stage Puiseux deformation", "equation": "x^5+y^5+z^5+t^2*x*y*z+t^2*x^4-2*t^7*x^2+t^12+t^13", "labels": ["Cusp tangent singularity", "Multiple Newton faces"]},
-    {"id": "threefold-degree-eleven-a3-tangent", "name": "Degree-eleven tangent with an A3 point and a degree-thirteen term", "equation": "x*y*t^9+z^4*t^7+x^11+y^11+z^11+t^13", "labels": ["A3 tangent singularity", "Yomdin singularity"]}
+    {"id": "threefold-degree-eleven-a3-tangent", "name": "Degree-eleven tangent with an A3 point and a degree-thirteen term", "equation": "x*y*t^9+z^4*t^7+x^11+y^11+z^11+t^13", "labels": ["A3 tangent singularity", "Yomdin singularity"]},
+    {"id": "threefold-cuspidal-quartic-monoid", "name": "Superisolated threefold over a quartic monoid with a cuspidal cubic tangent", "equation": "t*(y^2*z-x^3)+z^4+y^5+t^5", "labels": ["Superisolated", "Quartic tangent cone", "Higher-order perturbation"]}
   ]
 }, {
   "dimension": 4,
