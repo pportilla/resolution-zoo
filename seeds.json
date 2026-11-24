@@ -2414,7 +2414,8 @@
     {"id": "t3-suspension-modulus-w12-1-3", "name": "Suspension by t³ of: Line of W12 curve germs with modulus z: x⁴+y⁵+zx²y³", "equation": "x^4+y^5+z*x^2*y^3+t^3", "labels": ["Suspension"]},
     {"id": "t3-suspension-modulus-e18-1-2", "name": "Suspension by t² of: Line of E18 curve germs with modulus z: x³+y¹⁰+zxy⁷", "equation": "x^3+y^10+z*x*y^7+t^2", "labels": ["Suspension"]},
     {"id": "t3-suspension-modulus-e20-1-2", "name": "Suspension by t² of: Line of E20 curve germs with modulus z: x³+y¹¹+zxy⁸", "equation": "x^3+y^11+z*x*y^8+t^2", "labels": ["Suspension"]},
-    {"id": "threefold-fermat-cone-nodal-cubic-transform", "name": "Fermat cubic tangent cone with a nodal cubic tangent to the strict transform", "equation": "x^3+y^3+z^3-x^2*t^2+y*z*t^2+t^7", "labels": ["Cubic tangent cone", "Multiple Newton faces"]}
+    {"id": "threefold-fermat-cone-nodal-cubic-transform", "name": "Fermat cubic tangent cone with a nodal cubic tangent to the strict transform", "equation": "x^3+y^3+z^3-x^2*t^2+y*z*t^2+t^7", "labels": ["Cubic tangent cone", "Multiple Newton faces"]},
+    {"id": "threefold-sextic-triple-nodal-cubic-transform", "name": "Sextic tangent with an ordinary triple point and a nodal cubic on the strict transform", "equation": "t^3*(x^3+y^3+z^3)+x^6+y^6+z^6+t^5*(-x^2+y*z)+t^10", "labels": ["Ordinary triple point on tangent cone", "Multiple Newton faces"]}
   ]
 }, {
   "dimension": 4,
